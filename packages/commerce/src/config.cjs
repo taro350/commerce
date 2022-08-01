@@ -16,9 +16,18 @@ function withCommerceConfig(nextConfig = {}) {
       `The commerce provider is missing, please add a valid provider name`
     )
   }
+  console.log(
+    '------------------------------------------------------------------------%s',
+    newProvider
+  )
 
   process.chdir('../')
   process.chdir('./packages')
+  console.log(
+    `------------------------------------------------------------------------${__dirname} \n 
+    ------------------------------------------------------------------------${process.cwd()}`
+  )
+
   const commerceNextConfig = importCwd(
     path.join(process.cwd(), newProvider, 'src', 'next.config.cjs')
   )
